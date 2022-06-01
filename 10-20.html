@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+            // カウントダウン
+      function countDown(n) {
+          var text = "";
+              var count = n;
+              while (count > 0) {
+                text += count + " ";
+                count--;
+              }
+              return text;
+          }
+
+      console.log(countDown(3)); // 3 2 1
+      console.log(countDown(10)); // 10 9 8 7 6 5 4 3 2 1
+
+      // N 文字目まで出力
+
+      function getOneToN(s, n) {
+      var result = s.substring(0, n);
+      return result;
+      }
+
+      console.log(getOneToN("aabbccdd", 5)); // aabbc
+      console.log(getOneToN("gsacademyfukuoka", 9)); // gsacademy
+
+      // 最大と最小
+
+
+      function getMaxAndMin(s) {
+      let array = s.split(" ");
+      let array2 = Math.max(...array);
+              array2 += " " + Math.min(...array);
+              return array2;
+      }
+
+      console.log(getMaxAndMin("9 12 3 6 10")); // 12 3
+      console.log(getMaxAndMin("1 1 2 2 3")); // 3 1
+      console.log(getMaxAndMin("5 9 -1 10 2")); // 10 -1
+
+
+      // 文字列から N 番目
+      function getNthChar(s, n) {
+              return s.substr(n-1,1)
+      }
+
+
+      console.log(getNthChar("gsacademy", 3)); // a
+      console.log(getNthChar("abcdefg", 5)); // e
+      console.log(getNthChar("qwertyu", 1)); // q
+
+      // 文字列の一致
+
+
+      function isEqual(s, t) {
+        if(s === t){
+          return 'Yes'
+        }else if(s !=t){return 'No'}
+      }
+      console.log(isEqual("gsacademy", "gsacademy")); // Yes
+      console.log(isEqual("JavaScript", "ジャバスク")); // No
+      console.log(isEqual("aaaaa", "aaaaaa")); // No
+      // A の個数
+
+      function getNumberOfA(s) {
+var text = s;
+
+var targetStr = "A" ;
+
+var a = ( text.match( new RegExp( targetStr, "g" ) ) || [] ).length ;
+return a
+      }
+
+      console.log(getNumberOfA("GSACADEMY")); // 2
+      console.log(getNumberOfA("aAaAaA")); // 3
+      console.log(getNumberOfA("JavaScript")); // 0
+      // 表面積の計算
+   
+      function getSurfaceArea(a) {
+
+       return  ( a * a * 6 )
+      }
+
+      console.log(getSurfaceArea(4)); // 96
+      console.log(getSurfaceArea(1)); // 6
+      // 三角形の内角の和
+
+      function getAngle(a, b) {
+        return(180-(a+b))
+      }
+
+      console.log(getAngle(30, 90)); // 60
+      console.log(getAngle(45, 45)); // 90
+      // 数字の出力
+
+      function zeroPadding3(n) {
+      return [
+  n.toString().padStart(3, '0'),
+].join('/');
+      }
+
+      console.log(zeroPadding3(98)); // 098
+      console.log(zeroPadding3(2)); // 002
+      // 一週間の予定
+      // あなたは 1 週間を全て休みにするために有給を申請することにしました．もともと決まっている休みもあります．
+
+      // 半角スペース区切りで 7 日間の休みが，休みならば「yes」，休みでなければ「no」と入力されます．
+
+      // 有給申請しなくては行けない日数を出力するgetPaidHolidays()関数を作成してください．
+
+
+      function getPaidHolidays(s) {
+        var text = s;
+
+var targetStr = "no" ;
+
+var a = ( text.match( new RegExp( targetStr, "g" ) ) || [] ).length ;
+return a
+      }
+      
+
+      console.log(getPaidHolidays("yes yes yes yes no no yes")); // 2
+      console.log(getPaidHolidays("yes no no no no no yes")); // 5
+    </script>
+  </body>
+</html>
